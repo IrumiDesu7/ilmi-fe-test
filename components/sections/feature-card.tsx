@@ -18,7 +18,7 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
           ease: "easeOut",
         },
       }}
-      className="group/card w-full max-w-xs"
+      className="group/card w-full"
     >
       <div
         className={cn(

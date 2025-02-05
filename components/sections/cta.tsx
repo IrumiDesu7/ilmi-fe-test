@@ -4,10 +4,13 @@ import { Spotlight } from "@/components/ui/spotlight-new";
 
 const CTA = () => {
   return (
-    <div className="bg-grid-white/[0.02] relative flex min-h-[10rem] w-full overflow-hidden rounded-md bg-black/[0.9] antialiased dark:bg-black/[0.96] md:mt-32 md:h-[25rem] md:items-center md:justify-center">
+    <div
+      id="cta"
+      className="bg-grid-white/[0.02] relative mt-10 flex min-h-[10rem] w-full overflow-hidden rounded-md bg-black/[0.9] antialiased dark:bg-black/[0.96] md:mt-32 md:h-[25rem] md:items-center md:justify-center"
+    >
       <Spotlight />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
+      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 py-10 sm:pt-20">
         <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-300 to-neutral-800 bg-clip-text text-center text-4xl font-bold text-transparent dark:from-neutral-50 dark:to-neutral-400 md:text-7xl">
           Start Your Digital <br /> Asset Journey Today
         </h1>
