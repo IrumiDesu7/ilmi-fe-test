@@ -12,9 +12,9 @@ const CTA = () => {
       <Spotlight />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl p-4 py-10 sm:pt-20">
-        <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-300 to-neutral-800 bg-clip-text text-center text-4xl font-bold text-transparent dark:from-neutral-50 dark:to-neutral-400 md:text-5xl">
+        <h2 className="bg-opacity-50 bg-gradient-to-b from-neutral-300 to-neutral-800 bg-clip-text text-center text-4xl font-bold text-transparent dark:from-neutral-50 dark:to-neutral-400 md:text-5xl">
           Start Your Digital <br /> Asset Journey Today
-        </h1>
+        </h2>
         <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-neutral-300 dark:text-neutral-300">
           Join the future of decentralized art and finance. Experience complete
           ownership and control of your digital assets through our secure
