@@ -22,7 +22,7 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
     >
       <div
         className={cn(
-          "card relative mx-auto flex h-96 max-w-sm cursor-pointer flex-col justify-between overflow-hidden rounded-xl p-6",
+          "card relative mx-auto flex h-96 cursor-pointer flex-col justify-between overflow-hidden rounded-xl p-6",
           "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900",
           "border border-gray-800/40",
           "transition-all duration-300",

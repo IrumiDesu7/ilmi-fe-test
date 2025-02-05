@@ -7,7 +7,7 @@ const CTA = () => {
   return (
     <div
       id="cta"
-      className="bg-grid-white/[0.02] relative mt-10 flex min-h-[10rem] w-full overflow-hidden rounded-md bg-black/[0.9] antialiased dark:bg-black/[0.96] md:mt-32 md:h-[25rem] md:items-center md:justify-center"
+      className="bg-grid-white/[0.02] relative mt-10 flex min-h-[10rem] w-full overflow-hidden rounded-xl bg-black/[0.9] antialiased dark:bg-black/[0.96] md:mt-32 md:h-[25rem] md:items-center md:justify-center"
     >
       <Spotlight />
 
