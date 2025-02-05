@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ILMI Frontend Test
+
+A Next.js-based web application featuring a modern UI with wallet connection capabilities.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org) - I used the app router version
+- [Shadcn/ui](https://ui.shadcn.com/) - Re-usable components built using Radix UI and Tailwind CSS
+- [Lenis](https://github.com/studio-freight/lenis) - Smooth scroll library, super nice and nice smoothness
+- [RainbowKit](https://www.rainbowkit.com/) - Wallet connection handling, first time use btw
+- [Tailwind CSS](https://tailwindcss.com/) - For styling
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+```
+
+3. Copy the environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Add your WalletConnect Project ID in the `.env.local`:
+
+   - Get your Project ID from [WalletConnect Cloud](https://cloud.walletconnect.com/)
+   - Set it in your `.env.local`:
+
+   ```
+   NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID="your_project_id_here"
+   ```
+
+5. Run the development server:
+
+```bash
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design Decisions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Used Shadcn components for consistent, accessible, and customizable UI elements
+- Implemented smooth scrolling using Lenis for better user experience
+- Integrated RainbowKit for a seamless wallet connection experience
+- Utilized Tailwind CSS for efficient and responsive styling
 
-## Learn More
+## Challenges Faced
 
-To learn more about Next.js, take a look at the following resources:
+### Wallet Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The main challenge was implementing the wallet connection functionality, as it was a first-time implementation. Key challenges included:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Understanding the RainbowKit configuration
+- Setting up proper provider wrapping
+- Handling wallet connection states and user interactions
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project follows a standard Next.js App Router structure with:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` - Contains the main application routes and layouts
+- `components/` - Reusable UI components and sections
+- `lib/` - Utility functions and configurations
+
+## Contributing
+
+Feel free to submit issues and enhancement requests.
