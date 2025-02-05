@@ -1,7 +1,17 @@
-import Link from "next/link";
+"use client";
+
+import { Button } from "@/components/ui/button";
 import { Github, Mail } from "lucide-react";
+import { useLenis } from "lenis/react";
+import Link from "next/link";
 
 const Footer = () => {
+  const lenis = useLenis();
+
+  const handleClick = (target: string) => {
+    lenis?.scrollTo(target);
+  };
+
   return (
     <footer className="border-t border-gray-200/30 bg-white/50 backdrop-blur-xl dark:border-gray-800/50 dark:bg-black/50">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
@@ -32,12 +42,13 @@ const Footer = () => {
                 { label: "Get Started", href: "#cta" },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    className="inline-block text-sm text-gray-600 transition-all duration-200 ease-in-out hover:translate-x-1 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+                  <Button
+                    variant="link"
+                    className="h-auto p-0 text-sm text-gray-600 transition-all duration-200 ease-in-out hover:translate-x-1 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+                    onClick={() => handleClick(item.href)}
                   >
                     {item.label}
-                  </Link>
+                  </Button>
                 </li>
               ))}
             </ul>
