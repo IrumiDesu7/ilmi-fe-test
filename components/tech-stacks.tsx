@@ -67,7 +67,7 @@ export function TechStacks() {
               <CloseIcon />
             </motion.button>
             <motion.div
-              layoutId={`card-${active.title}-${id}`}
+              layoutId={`tech-${active.title}-${id}`}
               ref={ref}
               className="flex h-full w-full max-w-[500px] flex-col overflow-hidden bg-white dark:bg-neutral-900 sm:rounded-3xl md:h-fit md:max-h-[90%]"
             >
@@ -133,46 +133,51 @@ export function TechStacks() {
           </h2>
         </div>
         <ul className="mx-auto w-full max-w-2xl gap-4">
-          {techStacks.map((card) => (
+          {techStacks.map((tech) => (
             <motion.div
-              layoutId={`card-${card.title}-${id}`}
-              key={`card-${card.title}-${id}`}
-              onClick={() => setActive(card)}
+              layoutId={`tech-${tech.title}-${id}`}
+              key={`tech-${tech.title}-${id}`}
+              onClick={() => setActive(tech)}
               className="flex cursor-pointer flex-col items-center justify-between rounded-xl p-4 hover:bg-neutral-50 dark:hover:bg-neutral-800 md:flex-row"
             >
               <div className="flex flex-col gap-4 md:flex-row">
                 <motion.div
-                  layoutId={`image-${card.title}-${id}`}
+                  layoutId={`image-${tech.title}-${id}`}
                   className="flex items-center justify-center"
                 >
                   <Image
                     width={100}
                     height={100}
-                    src={card.src}
-                    alt={card.title}
-                    className="h-40 w-40 rounded-lg object-top md:h-14 md:w-14"
+                    src={tech.src}
+                    alt={tech.title}
+                    className={`h-40 w-40 rounded-lg object-top md:h-14 md:w-14 ${
+                      tech.title === "Next.js" ||
+                      tech.title === "shadcn/ui & Radix"
+                        ? "dark:invert"
+                        : ""
+                    }`}
                   />
                 </motion.div>
                 <div className="">
                   <motion.h3
-                    layoutId={`title-${card.title}-${id}`}
+                    layoutId={`title-${tech.title}-${id}`}
                     className="text-center font-medium text-neutral-800 dark:text-neutral-200 md:text-left"
                   >
-                    {card.title}
+                    {tech.title}
                   </motion.h3>
                   <motion.p
-                    layoutId={`description-${card.description}-${id}`}
+                    layoutId={`description-${tech.description}-${id}`}
                     className="text-center text-neutral-600 dark:text-neutral-400 md:text-left"
                   >
-                    {card.description}
+                    {tech.description}
                   </motion.p>
                 </div>
               </div>
               <motion.button
-                layoutId={`button-${card.title}-${id}`}
+                layoutId={`button-${tech.title}-${id}`}
                 className="mt-4 rounded-full bg-gray-100 px-4 py-2 text-sm font-bold text-black hover:bg-green-500 hover:text-white md:mt-0"
               >
-                {card.ctaText}
+                {tech.ctaText}
               </motion.button>
             </motion.div>
           ))}
