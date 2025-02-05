@@ -1,8 +1,10 @@
 "use client";
 
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { motion, AnimatePresence } from "motion/react";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useLenis } from "lenis/react";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -10,6 +12,13 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const lenis = useLenis();
+
+  const handleClick = (target: string) => {
+    lenis?.scrollTo(target);
+    onClose();
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -60,27 +69,31 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 transition={{ delay: 0.1 }}
                 className="flex flex-col space-y-4"
               >
-                <Link
-                  href="#hero"
-                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-                  onClick={onClose}
+                <Button
+                  variant="ghost"
+                  className="justify-start text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+                  onClick={() => handleClick("#hero")}
                 >
                   Home
-                </Link>
-                <Link
-                  href="#features"
-                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-                  onClick={onClose}
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+                  onClick={() => handleClick("#features")}
                 >
                   Features
-                </Link>
-                <Link
-                  href="#cta"
-                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
-                  onClick={onClose}
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+                  onClick={() => handleClick("#cta")}
                 >
                   Get Started
-                </Link>
+                </Button>
+
+                <div className="pt-4">
+                  <ConnectButton />
+                </div>
               </motion.div>
             </nav>
           </motion.div>

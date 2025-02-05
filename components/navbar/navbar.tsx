@@ -1,19 +1,23 @@
 "use client";
 
-// import { ConnectButton } from '@rainbow-kit/react'
-
-import Link from "next/link";
-import { Button } from "../ui/button";
-import MobileMenu from "./mobile-menu";
-import { useState } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { useState } from "react";
 import { ModeToggle } from "../mode-toggle";
+import MobileMenu from "./mobile-menu";
+import { Button } from "@/components/ui/button";
+import { useLenis } from "lenis/react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lenis = useLenis();
+
+  const handleClick = (target: string) => {
+    lenis?.scrollTo(target);
+  };
 
   return (
-    // Wrap the nav in motion.nav
     <motion.nav
       role="navigation"
       aria-label="Main navigation"
@@ -30,36 +34,45 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Wallet Connection Button */}
-        <div className="hidden items-center gap-8 sm:flex">
+        <div className="hidden items-center gap-4 sm:flex">
           {/* Theme Toggle */}
           <ModeToggle />
 
           {/* Main Navigation Links */}
           <div className="hidden md:block">
             {/* Using proper semantic list with proper spacing */}
-            <ul className="flex space-x-8" role="list">
+            <ul className="flex space-x-4" role="list">
               <li>
-                <Link href="#hero" className="hover:opacity-80">
+                <Button
+                  variant="ghost"
+                  className="hover:opacity-80"
+                  onClick={() => handleClick("#hero")}
+                >
                   Home
-                </Link>
+                </Button>
               </li>
               <li>
-                <Link href="#features" className="hover:opacity-80">
+                <Button
+                  variant="ghost"
+                  className="hover:opacity-80"
+                  onClick={() => handleClick("#features")}
+                >
                   Features
-                </Link>
+                </Button>
               </li>
               <li>
-                <Link href="#cta" className="hover:opacity-80">
+                <Button
+                  variant="ghost"
+                  className="hover:opacity-80"
+                  onClick={() => handleClick("#cta")}
+                >
                   Get Started
-                </Link>
+                </Button>
               </li>
             </ul>
           </div>
 
-          <Button className="rounded-lg px-4 py-2" aria-label="Connect wallet">
-            Connect Wallet
-          </Button>
+          <ConnectButton />
         </div>
 
         {/* Mobile Menu Button - Added animation */}
