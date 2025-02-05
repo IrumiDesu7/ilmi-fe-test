@@ -1,9 +1,11 @@
 "use client";
+
+import { techStacks } from "@/contents/tech-stacks";
+import { useOutsideClick } from "@/hooks/use-outside-click";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { useOutsideClick } from "@/hooks/use-outside-click";
-import { techStacks } from "@/contents/tech-stacks";
 
 export function TechStacks() {
   const [active, setActive] = useState<
@@ -78,7 +80,12 @@ export function TechStacks() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="h-80 w-full sm:rounded-tl-lg sm:rounded-tr-lg lg:h-80"
+                  className={cn(
+                    "h-80 w-full sm:rounded-tl-lg sm:rounded-tr-lg lg:h-80",
+                    (active.title === "Next.js" ||
+                      active.title === "shadcn/ui & Radix") &&
+                      "dark:invert",
+                  )}
                 />
               </motion.div>
 
@@ -150,12 +157,12 @@ export function TechStacks() {
                     height={100}
                     src={tech.src}
                     alt={tech.title}
-                    className={`h-40 w-40 rounded-lg object-top md:h-14 md:w-14 ${
-                      tech.title === "Next.js" ||
-                      tech.title === "shadcn/ui & Radix"
-                        ? "dark:invert"
-                        : ""
-                    }`}
+                    className={cn(
+                      "h-40 w-40 rounded-lg object-top md:h-14 md:w-14",
+                      (tech.title === "Next.js" ||
+                        tech.title === "shadcn/ui & Radix") &&
+                        "dark:invert",
+                    )}
                   />
                 </motion.div>
                 <div className="">
