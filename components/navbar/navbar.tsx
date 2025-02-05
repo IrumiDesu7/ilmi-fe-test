@@ -29,30 +29,30 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Main Navigation Links */}
-        <div className="hidden md:block">
-          {/* Using proper semantic list with proper spacing */}
-          <ul className="flex space-x-8" role="list">
-            <li>
-              <Link href="#hero" className="hover:opacity-80">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#features" className="hover:opacity-80">
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link href="#cta" className="hover:opacity-80">
-                Get Started
-              </Link>
-            </li>
-          </ul>
-        </div>
-
         {/* Wallet Connection Button */}
-        <div className="hidden sm:block">
+        <div className="hidden items-center gap-8 sm:flex">
+          {/* Main Navigation Links */}
+          <div className="hidden md:block">
+            {/* Using proper semantic list with proper spacing */}
+            <ul className="flex space-x-8" role="list">
+              <li>
+                <Link href="#hero" className="hover:opacity-80">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="#features" className="hover:opacity-80">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="#cta" className="hover:opacity-80">
+                  Get Started
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           <Button className="rounded-lg px-4 py-2" aria-label="Connect wallet">
             Connect Wallet
           </Button>

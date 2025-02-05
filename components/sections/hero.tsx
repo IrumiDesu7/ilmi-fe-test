@@ -2,12 +2,13 @@
 
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <div
       id="hero"
-      className="flex min-h-[60vh] flex-col items-center justify-center gap-4"
+      className="md:pt-30 mb-10 flex flex-col items-center justify-center gap-4 md:mb-32"
     >
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
@@ -22,7 +23,7 @@ const Hero = () => {
         Your Canvas for Creative & Financial Innovation
       </motion.h1>
       <motion.p
-        className="text-slate-700"
+        className="text-center text-slate-700"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ margin: "-100px" }}
@@ -46,7 +47,9 @@ const Hero = () => {
           ease: "easeOut",
         }}
       >
-        <Button>Get Started</Button>
+        <Link href="#features">
+          <Button>Get Started</Button>
+        </Link>
       </motion.div>
     </div>
   );
