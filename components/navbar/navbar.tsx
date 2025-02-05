@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import MobileMenu from "./mobile-menu";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,6 +32,9 @@ const Navbar = () => {
 
         {/* Wallet Connection Button */}
         <div className="hidden items-center gap-8 sm:flex">
+          {/* Theme Toggle */}
+          <ModeToggle />
+
           {/* Main Navigation Links */}
           <div className="hidden md:block">
             {/* Using proper semantic list with proper spacing */}

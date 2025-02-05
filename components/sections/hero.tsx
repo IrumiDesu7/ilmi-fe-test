@@ -23,7 +23,7 @@ const Hero = () => {
         Your Canvas for Creative & Financial Innovation
       </motion.h1>
       <motion.p
-        className="text-center text-slate-700"
+        className="text-center text-slate-700 dark:text-slate-300"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ margin: "-100px" }}
@@ -48,7 +48,7 @@ const Hero = () => {
         }}
       >
         <Link href="#features">
-          <Button>Get Started</Button>
+          <Button>Explore More</Button>
         </Link>
       </motion.div>
     </div>

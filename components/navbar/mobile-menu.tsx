@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -35,7 +36,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
-            <div className="mb-8 flex items-center justify-end">
+            <div className="mb-8 flex items-center justify-between">
+              <ModeToggle />
               <button onClick={onClose} className="p-2" aria-label="Close menu">
                 <svg
                   className="h-6 w-6"
@@ -56,24 +58,25 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
+                className="flex flex-col space-y-4"
               >
                 <Link
                   href="#hero"
-                  className="block text-lg hover:opacity-80"
+                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
                   onClick={onClose}
                 >
                   Home
                 </Link>
                 <Link
                   href="#features"
-                  className="block text-lg hover:opacity-80"
+                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
                   onClick={onClose}
                 >
                   Features
                 </Link>
                 <Link
                   href="#cta"
-                  className="block text-lg hover:opacity-80"
+                  className="text-lg font-medium transition-colors hover:text-gray-600 dark:hover:text-gray-300"
                   onClick={onClose}
                 >
                   Get Started
