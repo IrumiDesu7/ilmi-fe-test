@@ -50,7 +50,7 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-5">
               <Link
-                href="https://github.com"
+                href="https://github.com/IrumiDesu7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group text-gray-600 transition-all duration-200 ease-in-out hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
