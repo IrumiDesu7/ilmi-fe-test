@@ -13,6 +13,10 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
     <motion.div
       whileHover={{
         scale: 1.05,
+        transition: {
+          duration: 0.2,
+          ease: "easeOut",
+        },
       }}
       className="group/card w-full max-w-xs"
     >
