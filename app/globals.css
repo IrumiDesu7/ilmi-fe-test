@@ -71,6 +71,58 @@ body {
   }
 }
 
+/* View Transitions for theme toggle */
+@keyframes rotate-and-scale {
+  from {
+    transform: rotate(var(--rotation-from)) scale(var(--scale-from));
+  }
+  to {
+    transform: rotate(var(--rotation-to)) scale(var(--scale-to));
+  }
+}
+
+::view-transition-old(sun-icon),
+::view-transition-new(sun-icon),
+::view-transition-old(moon-icon),
+::view-transition-new(moon-icon) {
+  animation: none;
+  mix-blend-mode: normal;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+::view-transition-old(sun-icon) {
+  --rotation-from: 0deg;
+  --rotation-to: -90deg;
+  --scale-from: 1;
+  --scale-to: 0;
+  animation: 0.5s rotate-and-scale;
+}
+
+::view-transition-new(sun-icon) {
+  --rotation-from: 90deg;
+  --rotation-to: 0deg;
+  --scale-from: 0;
+  --scale-to: 1;
+  animation: 0.5s rotate-and-scale;
+}
+
+::view-transition-old(moon-icon) {
+  --rotation-from: 0deg;
+  --rotation-to: 90deg;
+  --scale-from: 1;
+  --scale-to: 0;
+  animation: 0.5s rotate-and-scale;
+}
+
+::view-transition-new(moon-icon) {
+  --rotation-from: -90deg;
+  --rotation-to: 0deg;
+  --scale-from: 0;
+  --scale-to: 1;
+  animation: 0.5s rotate-and-scale;
+}
+
 /* Webkit browsers (Chrome, Safari, newer versions of Opera) */
 ::-webkit-scrollbar {
   width: 8px;
