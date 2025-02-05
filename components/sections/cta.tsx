@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight-new";
+import { ShinyButton } from "../ui/shiny-button";
 
 const CTA = () => {
   return (
@@ -19,6 +20,9 @@ const CTA = () => {
           ownership and control of your digital assets through our secure
           platform.
         </p>
+        <div className="mt-8 flex justify-center">
+          <ShinyButton>Get Started</ShinyButton>
+        </div>
       </div>
     </div>
   );
