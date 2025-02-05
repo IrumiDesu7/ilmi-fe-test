@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar/navbar";
+import { Providers } from "@/components/providers";
 import Footer from "@/components/sections/footer";
 import SmoothScroller from "@/components/smooth-scroller";
-import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,18 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SmoothScroller>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
+        <Providers>
+          <SmoothScroller>
             <Navbar />
-          </ThemeProvider>
-          {children}
-          <Footer />
-        </SmoothScroller>
+            {children}
+            <Footer />
+          </SmoothScroller>
+        </Providers>
       </body>
     </html>
   );
