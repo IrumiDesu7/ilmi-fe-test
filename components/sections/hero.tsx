@@ -2,9 +2,11 @@
 
 import { motion } from "motion/react";
 import { Button } from "../ui/button";
-import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 const Hero = () => {
+  const lenis = useLenis();
+
   return (
     <div
       id="hero"
@@ -13,7 +15,7 @@ const Hero = () => {
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ margin: "-100px" }}
+        viewport={{ margin: "-100px", once: true }}
         transition={{
           duration: 0.6,
           ease: "easeOut",
@@ -26,7 +28,7 @@ const Hero = () => {
         className="text-center text-slate-700 dark:text-slate-300"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ margin: "-100px" }}
+        viewport={{ margin: "-100px", once: true }}
         transition={{
           duration: 0.6,
           delay: 0.2,
@@ -40,16 +42,16 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ margin: "-100px" }}
+        viewport={{ margin: "-100px", once: true }}
         transition={{
           duration: 0.6,
           delay: 0.4,
           ease: "easeOut",
         }}
       >
-        <Link href="#features">
-          <Button>Explore More</Button>
-        </Link>
+        <Button onClick={() => lenis?.scrollTo("#features")}>
+          Explore More
+        </Button>
       </motion.div>
     </div>
   );
