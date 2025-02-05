@@ -1,6 +1,7 @@
 import CTA from "@/components/sections/cta";
 import Features from "@/components/sections/features";
 import Hero from "@/components/sections/hero";
+import { TechStacks } from "@/components/tech-stacks";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Features />
       <CTA />
+      <TechStacks />
     </main>
   );
 }

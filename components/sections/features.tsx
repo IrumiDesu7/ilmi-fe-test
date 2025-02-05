@@ -1,4 +1,4 @@
-import { features } from "@/constants/features";
+import { features } from "@/contents/features";
 import FeatureCard from "./feature-card";
 
 const Features = () => {

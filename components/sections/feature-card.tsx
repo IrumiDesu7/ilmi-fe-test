@@ -22,7 +22,7 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
     >
       <div
         className={cn(
-          "card relative mx-auto flex h-96 max-w-sm cursor-pointer flex-col justify-between overflow-hidden rounded-xl p-6",
+          "card relative mx-auto flex h-96 cursor-pointer flex-col justify-between overflow-hidden rounded-xl p-6",
           "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900",
           "border border-gray-800/40",
           "transition-all duration-300",
@@ -45,13 +45,13 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => {
         </div>
 
         <div className="text content relative z-10 space-y-4">
-          <motion.h1
+          <motion.h2
             className="text-xl font-bold text-gray-50 md:text-2xl"
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
             {title}
-          </motion.h1>
+          </motion.h2>
           <p className="text-sm font-normal text-gray-300/90 transition-colors duration-300 group-hover/card:text-gray-200">
             {description}
           </p>
