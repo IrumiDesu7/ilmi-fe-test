@@ -73,7 +73,10 @@ export function TechStacks() {
               ref={ref}
               className="flex h-full w-full max-w-[500px] flex-col overflow-hidden bg-white dark:bg-neutral-900 sm:rounded-3xl md:h-fit md:max-h-[90%]"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
+              <motion.div
+                layoutId={`image-${active.title}-${id}`}
+                className="p-5"
+              >
                 <Image
                   priority
                   width={200}
@@ -133,7 +136,7 @@ export function TechStacks() {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="my-10 md:my-20">
+      <div className="my-10 flex flex-col gap-5 md:my-20">
         <div className="flex justify-center">
           <h2 className="text-balance text-center text-xl font-semibold">
             What we use to build this site:
@@ -158,7 +161,7 @@ export function TechStacks() {
                     src={tech.src}
                     alt={tech.title}
                     className={cn(
-                      "h-40 w-40 rounded-lg object-top md:h-14 md:w-14",
+                      "h-20 w-20 rounded-lg object-top md:h-14 md:w-14",
                       (tech.title === "Next.js" ||
                         tech.title === "shadcn/ui & Radix") &&
                         "dark:invert",
