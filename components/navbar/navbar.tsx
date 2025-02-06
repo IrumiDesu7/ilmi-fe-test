@@ -21,7 +21,7 @@ const Navbar = () => {
     <motion.nav
       role="navigation"
       aria-label="Main navigation"
-      className="w-full"
+      className="mx-auto w-full max-w-7xl"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
